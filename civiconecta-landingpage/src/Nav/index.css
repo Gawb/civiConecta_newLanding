@@ -1,0 +1,25 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo-container {
+    width: 12%;
+}
+.logo-container img{
+    width: 100%;
+}
+.nav-elements{
+    width: 50%;
+}
+.nav-elements ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.nav-elements ul li {
+    padding: 4%;
+
+}
