@@ -1,0 +1,98 @@
+@media (max-width: 550px) {
+.menu{
+    top: 0;
+    background-color: var(--blueCivi);
+    width: 100%;
+    color: var(--whiteCivi);
+    font-size: 7.4vw;
+    font-weight: bold;
+    /* display: flex; */
+    /* display: none; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    position: fixed;
+    transform: translateX(-100%);
+    transition: transform 0.6s ease-in-out;
+    z-index: 999;
+}
+.menu-open {
+    display: flex;
+    transition: all 0.6s ease;
+    transform: translateX(0);
+}
+.menu-barnav{
+    margin-top: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 10% 0 4%
+}
+.menu-barnav .logo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.burger-icon-container_menu{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.burger-icon-container_menu .burger-icon{
+    fill: var(--whiteCivi);
+    width: 48%;
+}
+.img-logo-icon{
+    fill: var(--white);
+    width: 100%;
+}
+.close-icon-container{
+ background-color: var(--whiteCivi);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius: 50%;
+}
+.close-icon{
+    fill: var(--pinkCivi);
+    width: 76%;
+}
+.menu-elements-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.menu-elements-container ul li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6% 0;
+}
+.menu-elements-container .icon-arrow{
+    fill: var(--whiteCivi);
+    width: 14%;
+}
+.menu-elements-container  #element-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.menu-elements-container button {
+    background-color: var(--pinkCivi);
+    border: none;
+    border-radius: 6vw;
+    font-size: 8vw;
+    color: var(--whiteCivi);
+    width: 74%;
+    padding: 2% 4%;
+    margin-top: 6%;
+    margin-bottom: 28%;
+}
+
+}

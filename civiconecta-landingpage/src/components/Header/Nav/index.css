@@ -1,0 +1,78 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 1%;
+    padding: 0 4%;
+    user-select: none;
+}
+.logo-container {
+    width: 12%;
+}
+.logo-container img{
+    width: 100%;
+}
+.nav-elements{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+.nav-elements ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 86%;
+}
+.nav-elements ul li {
+    padding: 2% 4%;
+    color: var(--blackCivi);
+    font-size: 1.2vw;
+    font-weight: bold;
+}
+.nav-elements ul li:hover{
+    color: var(--blueCivi);
+    cursor: pointer;
+}
+.nav-elements #element-1{
+    display: flex;
+    align-items: center;
+    padding: 2% 2%;
+}
+.nav-elements #element-1:hover{
+    background-color: var(--blueCivi);
+    color: var(--whiteCivi);
+    transition: 0.3s;
+}
+.icon-arrow{
+    width: 30%;
+    rotate: 180deg;
+    transition: 0.3s;
+    fill: var(--blackCivi);
+}
+#element-1:hover .icon-arrow{
+    transform: rotate(180deg);
+    fill: var(--whiteCivi);
+}
+.button-container{
+    width: 14%;
+    display: flex;
+    align-items: center;
+}
+.button-container button{
+    background-color: var(--pinkCivi);
+    color: var(--whiteCivi);
+    padding: 6%;
+    border: 0.2em solid  var(--pinkCivi);
+    border-radius: 1.2em;
+    font-size: 1.2vw;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+    user-select: none;
+}
+.button-container button:hover{
+    background-color: var(--whiteCivi);
+    color: var(--pinkCivi);
+}

@@ -1,0 +1,31 @@
+@media (max-width: 550px) {
+nav{
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.burger-icon-container{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.burger-icon{
+    fill: var(--blueCivi);
+    width: 48%;
+    cursor: pointer;
+}
+.logo-container{
+    width: 32%;
+}
+.button-container{
+    width: 24%;
+}
+
+nav .button-container button{
+    font-size: 4vw;
+}
+
+}
