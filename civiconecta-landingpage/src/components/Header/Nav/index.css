@@ -34,15 +34,19 @@ nav{
     color: var(--blueCivi);
     cursor: pointer;
 }
+/* ---About Civi___ */
 .nav-elements #element-1{
     display: flex;
     align-items: center;
-    padding: 2% 2%;
+    padding: 0%;
 }
 .nav-elements #element-1:hover{
     background-color: var(--blueCivi);
     color: var(--whiteCivi);
     transition: 0.3s;
+}
+.nav-elements #element-1 div{
+    padding: 2% 4%;
 }
 .icon-arrow{
     width: 30%;
@@ -53,6 +57,23 @@ nav{
 #element-1:hover .icon-arrow{
     transform: rotate(180deg);
     fill: var(--whiteCivi);
+}
+.nav-elements #element-1 ul{
+    background-color: var(--whiteCivi);
+    position: absolute;
+    width: 10.2vw;
+    top: 100%;
+    border-radius: 0px 0px 1.6vw 1.6vw;
+    box-shadow: 0px 10px 10px rgba(78, 78, 78, 0.2);
+    z-index: 1;
+    left: 0;
+}
+.nav-elements #element-1 ul li{
+    font-weight: normal;
+    padding: 10% 6%;
+}
+.nav-elements #element-1 ul li:nth-child(1){
+    border-bottom: 1px solid rgb(168, 168, 168);
 }
 .button-container{
     width: 14%;
