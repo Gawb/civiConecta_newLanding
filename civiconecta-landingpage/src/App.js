@@ -1,5 +1,6 @@
 import './App.css';
 import { Header } from './components/Header';
+import { Main } from './components/Main';
 
 const elements = ['Inicio', 'Sobre Civi', 'Profesionales', 'Testimonios', 'Contacto'];
 const imgArrow = (<svg
@@ -17,6 +18,7 @@ function App() {
   return (
     <div className="App">
       <Header elements={elements} imgArrow={imgArrow} />
+      <Main/>
     </div>
   );
 }

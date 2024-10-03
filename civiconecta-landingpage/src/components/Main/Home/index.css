@@ -1,0 +1,43 @@
+article{
+    background-color: var(--blueCiviOpa);
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin: 4vw 6vw;
+    padding: 8vw 6vw;
+    border-radius: 1vw;
+    user-select: none;
+}
+article div h1{
+    padding: 2vw 0;
+    font-size: 2.4vw;
+}
+article div p{
+    font-size: 1.1vw;
+}
+
+article div:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    width: 46vw;
+    margin-right: 1vw;
+}
+article div:nth-child(1) img{
+width: 6vw;
+}
+article div:nth-child(2){
+    position: relative;
+    width: 40vw;
+}
+
+article div:nth-child(2) div {
+    background-image: url('./homeImg.jpg');
+    width: 36vw;
+    height: 36vw;
+    border-radius: 1.2vw;
+    background-position: center;
+    position: absolute;
+    background-size: cover;
+    background-position-x: -6vw;
+}
+
