@@ -48,17 +48,17 @@ nav{
 .nav-elements #element-1 div{
     padding: 2% 4%;
 }
-.icon-arrow{
+nav #element-1 .icon-arrow{
     width: 30%;
     rotate: 180deg;
     transition: 0.3s;
     fill: var(--blackCivi);
 }
-#element-1:hover .icon-arrow{
+nav #element-1:hover .icon-arrow{
     transform: rotate(180deg);
     fill: var(--whiteCivi);
 }
-.nav-elements #element-1 ul{
+.nav-elements #element-1 ul {
     background-color: var(--whiteCivi);
     position: absolute;
     width: 10.2vw;
@@ -67,6 +67,17 @@ nav{
     box-shadow: 0px 10px 10px rgba(78, 78, 78, 0.2);
     z-index: 1;
     left: 0;
+    max-height: 0; /* Oculto por defecto */
+    opacity: 0; /* Oculto por defecto */
+    transform: translateY(-10px); /* Un ligero movimiento hacia arriba */
+    transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+    overflow: hidden; /* Para ocultar el contenido cuando no está visible */
+}
+
+.nav-elements #element-1:hover ul {
+    max-height: 200px; /* Un valor lo suficientemente alto para el contenido */
+    opacity: 1; /* Totalmente visible cuando está abierto */
+    transform: translateY(0); /* Vuelve a su posición original */
 }
 .nav-elements #element-1 ul li{
     font-weight: normal;

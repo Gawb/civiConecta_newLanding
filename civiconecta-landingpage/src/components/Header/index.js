@@ -8,52 +8,65 @@ const widthScreen = 498;
 
 const Header = ({ elements, imgArrow }) => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= widthScreen);
-    const [isHovered, setIsHovered] = useState(false);
-    const menuRef = useRef(false);
+    const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+    const menuRef = useRef(null);
 
     const handleResize = () => {
         setIsMobile(window.innerWidth <= widthScreen);
     };
 
+    const toggleSubMenu = (e) => {
+        e.stopPropagation();
+        setIsSubMenuOpen((prevState) => !prevState);
+    };
+
+    const handleMouseEnter = () => {
+        setIsSubMenuOpen(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsSubMenuOpen(false);
+    };
+
+
     useEffect(() => {
-        const handleMouseEnter = () => {
-            setIsHovered(true);
-        };
-        const handleMouseLeave = () => {
-            setIsHovered(false);
-        };
         const onMenu = menuRef.current;
 
-        onMenu.addEventListener('mouseenter', handleMouseEnter);
-        onMenu.addEventListener('mouseleave', handleMouseLeave);
+        if (isMobile) {
+            onMenu.addEventListener('click', toggleSubMenu);
+        } else {
+            onMenu.addEventListener('mouseenter', handleMouseEnter);
+            onMenu.addEventListener('mouseleave', handleMouseLeave);
+        }
 
         return () => {
-            onMenu.removeEventListener('mouseenter', handleMouseEnter);
-            onMenu.removeEventListener('mouseleave', handleMouseLeave);
+            if (isMobile) {
+                onMenu.removeEventListener('click', toggleSubMenu);
+            } else {
+                onMenu.removeEventListener('mouseenter', handleMouseEnter);
+                onMenu.removeEventListener('mouseleave', handleMouseLeave);
+            }
         };
-    }, []);
+    }, [isMobile]);
 
-    const liElements = (elements) => (
+    const liElements = (elements) =>
         elements.map((element, index) => (
             <li key={index} id={`element-${index}`}>
                 {index === 1 ? (
                     <div ref={menuRef}>
-                        <div>
+                        <div className={`${isSubMenuOpen ? '' : 'sub-element'}`}>
                             {element} {imgArrow}
                         </div>
-                        {isHovered
-                            ? <ul ref={menuRef}>
-                                <li>Nuestro Servicio</li>
-                                <li>Ventajas</li>
-                            </ul>
-                            : ''}
+                        <ul className={`submenu ${isSubMenuOpen ? 'open-submenu' : ''}`}>
+                            <li>Nuestro Servicio</li>
+                            <li>Ventajas</li>
+                        </ul>
                     </div>
                 ) : (
                     element
                 )}
             </li>
-        ))
-    );
+        ));
 
     const sharedProps = {
         elements,
@@ -69,11 +82,7 @@ const Header = ({ elements, imgArrow }) => {
         };
     }, []);
 
-    return (
-        <>
-            {isMobile ? <MobileNav {...sharedProps} /> : <Nav {...sharedProps} />}
-        </>
-    );
+    return <>{isMobile ? <MobileNav {...sharedProps} /> : <Nav {...sharedProps} />}</>;
 };
 
 export { Header };
