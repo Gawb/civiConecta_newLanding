@@ -1,9 +1,10 @@
 import './index.css';
+import './homeMobile.css';
 import heartEyes from './Heart Eyes - Square - Civicon.svg';
 
 const Home = () => {
     return (
-        <article>
+        <article className='article-home'>
             <div>
                 <img src={heartEyes} alt='heart eyes icon'/>
                 <h1>Programa de Orientación con

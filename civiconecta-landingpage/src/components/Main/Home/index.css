@@ -1,4 +1,4 @@
-article{
+.article-home{
     background-color: var(--blueCiviOpa);
     max-width: 100vw;
     display: flex;
@@ -8,36 +8,38 @@ article{
     border-radius: 1vw;
     user-select: none;
 }
-article div h1{
-    padding: 2vw 0;
+.article-home div h1{
+    padding: 1.2vw 0;
     font-size: 2.4vw;
 }
-article div p{
+.article-home div p{
     font-size: 1.1vw;
+    width: 36vw;
 }
 
-article div:nth-child(1){
+.article-home div:nth-child(1){
     display: flex;
     flex-direction: column;
     width: 46vw;
     margin-right: 1vw;
 }
-article div:nth-child(1) img{
+.article-home div:nth-child(1) img{
 width: 6vw;
 }
-article div:nth-child(2){
+.article-home div:nth-child(2){
     position: relative;
     width: 40vw;
+    top: -4vw;
 }
 
-article div:nth-child(2) div {
+.article-home div:nth-child(2) div {
     background-image: url('./homeImg.jpg');
-    width: 36vw;
-    height: 36vw;
+    width: 34vw;
+    height: 38vw;
     border-radius: 1.2vw;
     background-position: center;
     position: absolute;
     background-size: cover;
-    background-position-x: -6vw;
+    background-position-x: -7vw;
 }
 

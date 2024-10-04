@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <Header elements={elements} imgArrow={imgArrow} />
-      <Main/>
+      <Main imgArrow={imgArrow}/>
     </div>
   );
 }
