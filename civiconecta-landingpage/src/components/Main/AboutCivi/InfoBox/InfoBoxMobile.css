@@ -1,0 +1,68 @@
+@media (max-width: 499px) {
+    .info-box{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .info-box .boxes{
+        width: 82vw;
+        margin: 6vw 0;
+        border-radius:  1.6vw;
+    }
+    .info-box .boxes.closed{
+        height: 9.8vw;
+    }
+    .info-box .boxes.open{
+        height: 62vw;
+    }
+    .info-box .boxes .info-item{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        background-color: var(--greyCiviOpa);
+        padding: 1vw 0;
+        border-radius: 0.6vw;
+        position: relative;
+        border-radius:  1.6vw;
+    }
+    .info-item .heartBrainIcon{
+        position: absolute;
+        width: 12vw;
+        top: -4.6vw;
+        left: 1vw;
+        border-radius:  1.6vw;
+    }
+    .info-box .info-item h3{
+        font-size: 3.8vw;
+        padding-right: 3vw;
+    }
+    .info-item .button-container{
+        width: 18vw;
+        padding-right: 2vw;
+
+    }
+    .info-item button{
+        color: var(--white);
+        background-color: var(--blueCivi);
+        width: 18vw;
+        padding: 1vw;
+        justify-content: right;
+        align-items: center;
+        font-size: 2.8vw;
+        font-weight:bold;
+        border-radius:  1.6vw;
+    }
+    .info-item .icon-arrow{
+        width: 6vw;
+    }
+    .info-box .boxes .message-content.open{
+        height: 22vw;
+        padding: 1vw;
+        text-align: left;
+        border-radius:  0 0 0.6vw  0.6vw;
+        opacity: 1;
+        transition: all 1.3s;
+    }
+    .info-box .boxes .message-content.open p{
+        font-size: 3.2vw;
+    }
+}

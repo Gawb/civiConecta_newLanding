@@ -2,18 +2,18 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 1%;
-    padding: 0 4%;
+    margin-top: 2vw;
+    padding: 0 8vw;
     user-select: none;
 }
 .logo-container {
-    width: 12%;
+    width: 12vw;
 }
 .logo-container img{
     width: 100%;
 }
 .nav-elements{
-    width: 60%;
+    width: 60vw;
     display: flex;
     justify-content: center;
 }
@@ -87,12 +87,12 @@ nav #element-1:hover .icon-arrow{
 .nav-elements #element-1 ul li:nth-child(1){
     border-bottom: 1px solid rgb(168, 168, 168);
 }
-.button-container{
-    width: 14%;
+.nav-elements .button-container{
+    width: 10vw;
     display: flex;
     align-items: center;
 }
-.button-container button{
+.nav-elements .button-container button{
     background-color: var(--pinkCivi);
     color: var(--whiteCivi);
     padding: 6%;
@@ -105,7 +105,7 @@ nav #element-1:hover .icon-arrow{
     transition: 0.3s;
     user-select: none;
 }
-.button-container button:hover{
+.nav-elements .button-container button:hover{
     background-color: var(--whiteCivi);
     color: var(--pinkCivi);
 }

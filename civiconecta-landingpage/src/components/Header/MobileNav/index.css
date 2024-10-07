@@ -1,31 +1,48 @@
 @media (max-width: 499px) {
 nav{
-    margin-top: 4%;
+    margin-top: 2vw;
+    padding: 0 6vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
 }
 .burger-icon-container{
-    width: 20%;
+    width: 10vw;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .burger-icon{
     fill: var(--blueCivi);
-    width: 48%;
+    width: 20vw;
     cursor: pointer;
 }
-.logo-container{
-    width: 32%;
+nav .logo-container{
+    width: 20vw;
 }
-.button-container{
-    width: 24%;
+nav .logo-container img{
+    width: 30vw;
+}
+nav .button-container{
+    width: 24vw;
 }
 
 nav .button-container button{
-    font-size: 4vw;
+    font-size: 44vw;
+}
+nav .button-container{
+    display: flex;
+    justify-content: center;
+}
+nav .button-container button {
+    background-color: var(--pinkCivi);
+    border: none;
+    border-radius: 6vw;
+    font-size: 4.4vw;
+    color: var(--whiteCivi);
+    width: 24vw;
+    padding: 2vw;
 }
 
 }

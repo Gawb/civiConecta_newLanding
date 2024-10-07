@@ -1,0 +1,87 @@
+ .info-box{
+    display: flex;
+    justify-content: space-between;
+    align-items:baseline;
+    width: 80vw;
+}
+.info-box .boxes{
+    width: 38vw;
+    margin: 0;
+    background-color: var(--greyCiviOpa);
+    border-radius:  0.6vw;
+    transition: all 0.6s;
+}
+.info-box .boxes.closed{
+    height: 4.8vw;
+}
+.info-box .boxes.open{
+    height: 28vw;
+}
+.info-box .boxes .info-item{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: var(--greyCiviOpa);
+    padding: 1vw 0;
+    border-radius: 0.6vw;
+    position: relative;
+}
+.heartBrainIcon-bg{
+    fill: var(--yellowCivi);
+}
+.heartBrainIcon-ft{
+    fill: var(--white);
+}
+.info-item .heartBrainIcon{
+    position: absolute;
+    width: 6vw;
+    top: -1.6vw;
+    left: 1vw;
+}
+.info-box .info-item h3{
+    font-size: 1.6vw;
+    padding-right: 4vw;
+}
+.info-item .button-container{
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+}
+.info-item button{
+    color: var(--white);
+    background-color: var(--blueCivi);
+    border: none;
+    width: 8.8vw;
+    border-radius: 0.6vw;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-size: 1.4vw;
+    font-weight:bold;
+    cursor: pointer;
+}
+.info-item .icon-arrow{
+    fill: var(--white);
+    width: 2.8vw;
+    transform: rotate(180deg);
+    transition: all 0.6s;
+}
+.button-container.open .icon-arrow{
+    transform: rotate(0deg);
+}
+.info-box .boxes .message-content.closed{
+    height: 0vw;
+    padding: 1vw;
+    text-align: left;
+    border-radius:  0 0 0.6vw  0.6vw;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.info-box .boxes .message-content.open{
+    height: 22vw;
+    padding: 1vw;
+    text-align: left;
+    border-radius:  0 0 0.6vw  0.6vw;
+    opacity: 1;
+    transition: all 1.3s;
+}

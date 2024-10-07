@@ -1,4 +1,5 @@
 import './AboutCivi.css';
+import './AboutCiviMobile.css';
 import LogoCiviAbout from './Logo---CiviConecta---Horizontal---1000x174.png';
 import { InfoBox } from './InfoBox';
 
@@ -11,14 +12,15 @@ const AboutCivi = ({ imgArrow }) => {
 
     return (
         <article className='article-about'>
-            <div>
-                <h2>¿Qué es<h2><img src={LogoCiviAbout}/>?</h2></h2>
+            <div className='about-title'>
+                <h2>¿Qué es</h2>
+                <h2><img src={LogoCiviAbout}/> ?</h2>
             </div>
-            <div id="vimeo-player" class="video-civi">
-                <iframe width="840" height="560" src="https://www.youtube.com/embed/zDZRmXnZMjc" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
+            <div id="video-player" className="video-civi">
+                <iframe src="https://www.youtube.com/embed/zDZRmXnZMjc"  allow="autoplay; fullscreen; picture-in-picture">
                 </iframe>
             </div>
-            <div>
+            <div className='about-message-content'>
                 {quoteIcon}
                 <p>
                 Desarrollar habilidades socioemocionales en tus estudiantes los ayudará a entender y manejar sus emociones; establecer y alcanzar metas positivas; sentir y mostrar empatía por los demás; construir y mantener relaciones saludables; y tomar decisiones responsables, es decir, los prepara para la vida
