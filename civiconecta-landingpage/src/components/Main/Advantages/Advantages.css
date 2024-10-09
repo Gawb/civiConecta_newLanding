@@ -1,0 +1,93 @@
+.advantages {
+    background-color: var(--blueCiviOpa);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+    margin: 8vw 0;
+}
+
+.advantages h2 {
+    margin: 6vw;
+    width: 38vw;
+    text-align: center;
+    font-size: 2.4vw;
+}
+.carrusel-container-element{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.carrusel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+.boxes-container {
+    display: flex;
+    width: 86vw;
+    overflow-x: hidden;
+    justify-content: center;
+}
+.carrusel-arrow {
+    height: 4vw;
+    margin: 1vw;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carrusel-arrow .icon-arrow {
+    fill: var(--blueCivi);
+    width: 4vw;
+    height: 4vw;
+    border: 1px solid var(--blueCivi);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.left-arrow {
+    rotate: -90deg;
+    padding: 4vw 0;
+
+}
+
+.right-arrow {
+    rotate: 90deg;
+
+}
+
+/* Este es el contenedor del carrusel con la clase para la transición */
+.carrusel-boxes {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42vw;
+    height: auto;
+    flex-flow: row nowrap;
+    transition: transform 0.5s ease; */
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.advantages ul {
+    display: flex;
+    margin-left: 5.6vw;
+}
+
+.advantages .point {
+    color: var(--greypointCivi);
+    width: 0vw;
+    margin: 1.5vw;
+    font-size: 4vw;
+}
+
+.advantages .point.point-selected {
+    color: var(--blueCivi);
+}

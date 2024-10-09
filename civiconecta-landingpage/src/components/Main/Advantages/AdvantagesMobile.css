@@ -1,0 +1,9 @@
+@media (max-width: 499px) {
+    .advantages h2 {
+       font-size: 6vw;
+       width: 76vw;
+    }
+    .carrusel-arrow{
+        display: none;
+    }
+}
