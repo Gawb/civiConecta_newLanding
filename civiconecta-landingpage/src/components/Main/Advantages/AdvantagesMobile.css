@@ -1,9 +1,38 @@
 @media (max-width: 499px) {
     .advantages h2 {
-       font-size: 6vw;
-       width: 76vw;
+        font-size: 6vw;
+        width: 76vw;
     }
-    .carrusel-arrow{
+
+    .carrusel-arrow {
         display: none;
+    }
+
+    .carrusel-container {
+        overflow-x: visible;
+        height: 100vw;
+    }
+
+    .boxes-container {
+        width: 100%;
+        overflow-x: hidden;
+        height: 100vw;
+    }
+
+    .carrusel-boxes {
+        height: 100vw;
+    }
+
+    .advantages ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 14vw;
+    }
+
+    .advantages .point {
+        width: 2vw;
+        margin: 2.5vw;
+        font-size: 10vw;
     }
 }

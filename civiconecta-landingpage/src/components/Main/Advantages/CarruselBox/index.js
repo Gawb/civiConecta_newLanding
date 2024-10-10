@@ -1,4 +1,5 @@
 import './CarruselBox.css';
+import './CarruselBoxMobile.css';
 
 const CarruselBox = ({ carruselElements, imgArrow, activeIndex }) => {
 
@@ -8,7 +9,7 @@ const CarruselBox = ({ carruselElements, imgArrow, activeIndex }) => {
                 key={index}
                 className={`carruselBox ${index === activeIndex ? 'active' : index === activeIndex - 1 || index === activeIndex + 1 ? 'adjacent' : ''}`}
                 style={{
-                    transform: index === activeIndex ? 'scale(1)' : 'scale(0.8)',
+                    // transform: index === activeIndex ? 'scale(1)' : 'scale(0.8)',
                     border: `0.2vw solid var(${carruselElements.color[index]})`,
                 }}
             >

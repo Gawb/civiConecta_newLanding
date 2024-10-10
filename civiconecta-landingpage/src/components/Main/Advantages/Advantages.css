@@ -13,11 +13,13 @@
     text-align: center;
     font-size: 2.4vw;
 }
-.carrusel-container-element{
+
+.carrusel-container-element {
     display: flex;
     align-items: center;
     width: 100%;
 }
+
 .carrusel-container {
     display: flex;
     justify-content: center;
@@ -26,12 +28,14 @@
     width: 100%;
     position: relative;
 }
+
 .boxes-container {
     display: flex;
-    width: 86vw;
+    width: 82vw;
     overflow-x: hidden;
     justify-content: center;
 }
+
 .carrusel-arrow {
     height: 4vw;
     margin: 1vw;
@@ -59,22 +63,13 @@
 
 }
 
-/* Este es el contenedor del carrusel con la clase para la transición */
 .carrusel-boxes {
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 42vw;
-    height: auto;
-    flex-flow: row nowrap;
-    transition: transform 0.5s ease; */
     display: flex;
     transition: transform 0.5s ease;
     will-change: transform;
     justify-content: center;
     align-items: center;
 }
-
 
 .advantages ul {
     display: flex;

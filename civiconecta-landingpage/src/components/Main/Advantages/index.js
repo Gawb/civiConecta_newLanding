@@ -13,7 +13,7 @@ import { CarruselBox } from './CarruselBox';
 
 const carruselElements = {
     color: ['--pinkCivi', '--yellowCivi', '--blueCivi', '--greenCivi', '--yellowCivi', '--greenCivi', '--pinkCivi', '--blueCivi'],
-    colorCurtain: ['--pinkCiviOpaCurtain','--yellowCiviOpaCurtain','--BlueCiviOpaCurtain','--greenCivyOpaCurtain','--yellowCiviOpaCurtain','--greenCivyOpaCurtain','--pinkCiviOpaCurtain','--BlueCiviOpaCurtain',],
+    colorCurtain: ['--pinkCiviOpaCurtain', '--yellowCiviOpaCurtain', '--BlueCiviOpaCurtain', '--greenCivyOpaCurtain', '--yellowCiviOpaCurtain', '--greenCivyOpaCurtain', '--pinkCiviOpaCurtain', '--BlueCiviOpaCurtain',],
     img: [worldMap, proTeam, teacher, smileFaces, ministerial, childrenHands, searching, archive],
     tittle: [
         'Actividades contextualizadas',
@@ -40,6 +40,7 @@ const carruselElements = {
 const Advantages = ({ imgArrow }) => {
     const [activeIndex, setActiveIndex] = useState(2); // Comenzar en el segundo elemento
     const [isTransitioning, setIsTransitioning] = useState(false);
+    const [startTouchX, setStartTouchX] = useState(null);
     const transitionTimeout = useRef(null);
 
     // Crear el carrusel extendido con elementos extra para un bucle infinito
@@ -49,7 +50,7 @@ const Advantages = ({ imgArrow }) => {
             ...carruselElements.color,
             carruselElements.color[0],
         ],
-        colorCurtain:[
+        colorCurtain: [
             carruselElements.colorCurtain[carruselElements.colorCurtain.length - 1],
             ...carruselElements.colorCurtain,
             carruselElements.colorCurtain[0],
@@ -81,6 +82,27 @@ const Advantages = ({ imgArrow }) => {
         if (isTransitioning) return;
         setIsTransitioning(true);
         setActiveIndex((prevIndex) => prevIndex + 1);
+    };
+    const handleTouchStart = (e) => {
+        const touchX = e.touches[0].clientX;
+        setStartTouchX(touchX);
+    };
+    const handleTouchMove = (e) => {
+        if (!startTouchX) return;
+        const touchX = e.touches[0].clientX;
+        const touchDifference = startTouchX - touchX;
+
+        // Si el toque se mueve más de un cierto umbral (ej. 50px), realiza el desplazamiento
+        if (touchDifference > 50) {
+            nextSlide(); // Mover a la derecha
+            setStartTouchX(null); // Reiniciar el toque
+        } else if (touchDifference < -50) {
+            prevSlide(); // Mover a la izquierda
+            setStartTouchX(null); // Reiniciar el toque
+        }
+    };
+    const handleTouchEnd = () => {
+        setStartTouchX(null); // Limpiar el estado cuando el toque termina
     };
 
     const liPoints = (elements, activeIndex) =>
@@ -124,7 +146,10 @@ const Advantages = ({ imgArrow }) => {
                 <div className='carrusel-arrow left-arrow' onClick={prevSlide}>
                     {imgArrow}
                 </div>
-                <div className='carrusel-container'>
+                <div className='carrusel-container'
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}>
                     <div className='boxes-container'>
                         <div className='carrusel-boxes'
                             style={{
