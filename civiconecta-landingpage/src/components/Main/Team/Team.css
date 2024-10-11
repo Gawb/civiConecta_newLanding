@@ -1,0 +1,36 @@
+.team-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+}
+
+.team-section .team-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+}
+
+.team-section .team-info h2{
+ width: 30vw;
+ font-size: 2.8vw;
+}
+
+.team-section .team-info p{
+    width: 49vw;
+    font-size: 1.1vw;
+}
+
+.team-members{
+    display: flex;
+    width: 80vw;
+    height: auto;
+    margin: 4vw 0;
+}
+
+.team-members_slide {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

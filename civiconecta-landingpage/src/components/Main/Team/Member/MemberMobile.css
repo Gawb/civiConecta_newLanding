@@ -1,0 +1,38 @@
+@media (max-width: 499px) {
+
+    .memberBox {
+        width: 78vw;
+        height: 127vw;
+        margin: 1vw 0;
+        user-select: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .photo-member{
+        width: 72vw;
+        height: 78vw;
+        border-radius: 2vw;
+        background-size: 86vw;
+    }
+    .info-member{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        margin: 4vw 0;
+    }
+    .info-member h3{
+        font-size: 6vw;
+    }
+    .info-member p{
+        font-size: 4vw;
+        font-weight: 600;
+
+    }
+    .info-member a img{
+        width: 8vw;
+        margin: 4vw;
+    }
+
+}

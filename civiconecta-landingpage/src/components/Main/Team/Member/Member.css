@@ -1,0 +1,29 @@
+.memberBox {
+    width: 18vw;
+    height: 28vw;
+    margin: 1vw 0;
+    user-select: none;
+}
+.photo-member{
+    width: 18vw;
+    height: 18vw;
+    border-radius: 1vw;
+    background-size: 20vw;
+}
+.info-member{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 1vw 0;
+}
+.info-member h3{
+    font-size: 1.5vw;
+}
+.info-member p{
+    font-size: 1.2vw;
+    font-weight: 500;
+}
+.info-member a img{
+    width: 2.8vw;
+}
