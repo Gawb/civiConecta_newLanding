@@ -22,10 +22,11 @@ const Member = ({ memberDetails }) => {
                     <p>
                         {memberDetails.profession[index]}
                     </p>
-
+                    <div>
                     <a href={memberDetails.link[index]}>
                         <img src={linkedin} />
                     </a>
+                    </div>
                 </div>
 
             </section>

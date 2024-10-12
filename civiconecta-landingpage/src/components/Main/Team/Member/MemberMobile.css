@@ -20,7 +20,9 @@
         align-items: center;
         flex-direction: column;
         text-align: center;
+        justify-content: start;
         margin: 4vw 0;
+        height: 34vw;
     }
     .info-member h3{
         font-size: 6vw;
@@ -30,9 +32,12 @@
         font-weight: 600;
 
     }
+    .info-member div{
+        height: 18vw;
+
+    }
     .info-member a img{
-        width: 8vw;
-        margin: 4vw;
+        width: 12vw;
     }
 
 }

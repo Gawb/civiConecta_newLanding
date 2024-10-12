@@ -1,5 +1,5 @@
 import Catalina  from './member_img/Cata-R.jpg';
-import Eduardo from './member_img/kizioY.jpeg';
+import Eduardo from './member_img/kizioY_cut.jpeg';
 import Clauda from './member_img/ClaudiaCaroca-R.jpg';
 import Karina from './member_img/Kari-R.jpg';
 import Francisca from './member_img/franG.jpeg';

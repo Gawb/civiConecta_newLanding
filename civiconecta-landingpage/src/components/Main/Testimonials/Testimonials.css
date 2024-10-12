@@ -1,0 +1,47 @@
+.testimonials{
+    width: 100%;
+    background-image: url('./BG---Civi-Red---Testimonios.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    user-select: none;
+}
+
+.testimonials h2{
+    color: var(--pinkCivi);
+    font-size: 2.8vw;
+    width: 34vw;
+    margin: 4vw 0;
+}
+
+.testimonials_carrusel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8vw;
+}
+
+.testimonial_carruse_arrow{
+    width:4.6vw;
+    border: 0.2vw solid var(--pinkCivi);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6vw;
+    fill: var(--pinkCivi);
+    cursor: pointer;
+    margin: 2vw;
+}
+.testimonial_carruse_arrow.left{
+    rotate: -90deg;
+}
+.testimonial_carruse_arrow.rigth{
+    rotate: 90deg;
+}
+.testimonials-boxes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

@@ -38,6 +38,7 @@ const carruselElements = {
 };
 
 const Advantages = ({ imgArrow }) => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
     const [activeIndex, setActiveIndex] = useState(2); // Comenzar en el segundo elemento
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [startTouchX, setStartTouchX] = useState(null);
@@ -139,6 +140,12 @@ const Advantages = ({ imgArrow }) => {
         };
     }, [activeIndex]);
 
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 500);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <article className='advantages'>
             <h2>¿Cuáles son las ventajas de contar con CiviConecta?</h2>
@@ -151,14 +158,25 @@ const Advantages = ({ imgArrow }) => {
                     onTouchMove={handleTouchMove}
                     onTouchEnd={handleTouchEnd}>
                     <div className='boxes-container'>
-                        <div className='carrusel-boxes'
-                            style={{
-                                transform: `translateX(calc(-${activeIndex} * 100% / ${extendedCarouselElements.img.length} + 46% - 36px))`,
-                                transition: isTransitioning ? 'transform 0.5s ease' : 'none',
-                            }}
-                        >
-                            <CarruselBox carruselElements={extendedCarouselElements} activeIndex={activeIndex} imgArrow={imgArrow} />
-                        </div>
+                        {isMobile ?
+                            <div className='carrusel-boxes'
+                                style={{
+                                    transform: `translateX(calc(-${activeIndex} * 100% / ${extendedCarouselElements.img.length} + 46% - 8vw))`,
+                                    transition: isTransitioning ? 'transform 0.5s ease' : 'none',
+                                }}
+                            >
+                                <CarruselBox carruselElements={extendedCarouselElements} activeIndex={activeIndex} imgArrow={imgArrow} />
+                            </div>
+                            :
+                            <div className='carrusel-boxes'
+                                style={{
+                                    transform: `translateX(calc(-${activeIndex} * 100% / ${extendedCarouselElements.img.length} + 46% - 3vw))`,
+                                    transition: isTransitioning ? 'transform 0.5s ease' : 'none',
+                                }}
+                            >
+                                <CarruselBox carruselElements={extendedCarouselElements} activeIndex={activeIndex} imgArrow={imgArrow} />
+                            </div>
+                        }
                     </div>
                 </div>
 

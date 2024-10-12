@@ -1,0 +1,109 @@
+.school {
+    width: 24vw;
+    height: 30vw;
+    background-color: var(--white);
+    margin: 0 1vw;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    border: 0.2vw solid var(--pinkCivi);
+    border-radius: 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.logo-school {
+    background-color: var(--white);
+    width: 10vw;
+    height: 10vw;
+    border: 0.2vw solid var(--pinkCivi);
+    border-radius: 6vw;
+    background-position: center;
+    background-size: 6vw;
+    background-repeat: no-repeat;
+    margin: 1vw 0;
+}
+
+.school h3 {
+    color: var(--blackCivi);
+    font-size: 1.6vw;
+}
+
+.school p:nth-child(3) {
+    color: var(--greyCivi);
+    font-size: 1.4vw;
+}
+
+.school p:nth-child(4) {
+    color: var(--blackCivi);
+    font-weight: 600;
+    font-size: 1.2vw;
+    padding-bottom: 2vw;
+}
+
+.review-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    width: 20vw;
+
+}
+
+.review-box.close {
+    overflow: hidden;
+    max-height: 5.2vw;
+    /* Altura inicial */
+    transition: max-height 0.3s ease;
+}
+
+.review-box.open {
+    max-height: 28vw;
+    animation: readReview 0.8s;
+}
+
+.review-box .review {
+    color: var(--greyCivi);
+    font-size: 1.2vw;
+    text-align: left;
+    height: 5.2vw;
+}
+
+.review-box.open .review {
+    height: 24vw;
+    position: absolute;
+    margin: 0 1.4vw 16vw;
+    transition: height 0.6s ease-in-out;
+    background-color: var(--white);
+    font-weight: 600;
+}
+
+.more-button {
+    cursor: pointer;
+    font-size: 1.4vw;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+}
+
+.read-more-icon {
+    width: 2vw;
+    height: 2vw;
+    padding: 0;
+}
+
+@keyframes readReview {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

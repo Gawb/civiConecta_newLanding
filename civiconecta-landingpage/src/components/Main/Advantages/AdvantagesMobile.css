@@ -1,4 +1,7 @@
 @media (max-width: 499px) {
+    /* .advantages{
+        height: 80vw;
+    } */
     .advantages h2 {
         font-size: 6vw;
         width: 76vw;
@@ -7,16 +10,23 @@
     .carrusel-arrow {
         display: none;
     }
+    .carrusel-container-element{
+        height: 118vw;
+        display: flex;
+        align-items: center;
+    }
 
     .carrusel-container {
         overflow-x: visible;
-        height: 100vw;
+        height: 106vw;
+        width: 100vw;
     }
 
     .boxes-container {
         width: 100%;
         overflow-x: hidden;
-        height: 100vw;
+        height: 106vw;
+        align-items: center;
     }
 
     .carrusel-boxes {
