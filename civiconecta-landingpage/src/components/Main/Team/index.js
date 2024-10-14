@@ -79,7 +79,7 @@ const Team = () => {
                 }}
             ></li>
         ));
-    
+
 
     return (
         <article className='team-section'>

@@ -1,1 +1,44 @@
-@media (max-width: 499px) {}
+@media (max-width: 499px) {
+    .school{
+        width: 78vw;
+        height: 78vw;
+    }
+    .logo-school{
+        width: 24vw;
+        height: 24vw;
+        border-radius: 12vw;
+        background-size: 14vw;
+    }
+    .school h3{
+        font-size: 5vw;
+    }
+    .school p:nth-child(3){
+        font-size: 5vw;
+    }
+    .school p:nth-child(4){
+        font-size: 4vw;
+    }
+    .review-box{
+        width: 78vw;
+    }
+    .review-box.close{
+        max-height: 16vw;
+    }
+    .review-box .review{
+        font-size: 3.4vw;
+        margin: 0 4vw;
+    }
+    .review-box.open .review{
+        font-size: 3.4vw;
+        margin: 0px 1.6vw 52vw;
+    }
+    .more-button {
+        font-size: 4vw;
+        margin: 1vw;
+
+    }
+    .more-button .read-more-icon{
+        width: 4vw;
+        height: 4vw;
+    }
+}

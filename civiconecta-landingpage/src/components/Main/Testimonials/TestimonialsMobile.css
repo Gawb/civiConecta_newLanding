@@ -1,1 +1,32 @@
-@media (max-width: 499px) {}
+@media (max-width: 499px) {
+
+.testimonials h2{
+    font-size: 6vw;
+    width: 70vw;
+    margin: 6vw 0;
+}
+
+.testimonial_carruse_arrow{
+    display: none;
+}
+
+.testimonials_carrusel-container{
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.testimonials-boxes{
+
+    position: relative;
+
+}
+
+.testimonials .point {
+    background-color: var(--greyCivi);
+}
+
+.testimonials .point.point-selected{
+    background-color: var(--pinkCivi);
+}
+
+}

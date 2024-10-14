@@ -1,4 +1,5 @@
 import './School.css';
+import './SchoolMobile.css';
 import { useState, useEffect } from 'react';
 
 
