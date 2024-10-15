@@ -1,4 +1,4 @@
-import './index.css';
+import './Header.css';
 import { useState, useEffect, useRef } from 'react';
 import logo from '../../logos/Logo---CiviConecta---Principal-No-Claim---1000x500.png';
 import { Nav } from './Nav';

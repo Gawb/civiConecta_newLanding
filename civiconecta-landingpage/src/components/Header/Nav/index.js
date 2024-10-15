@@ -1,8 +1,7 @@
-import './index.css';
+import './Nav.css';
 import PropTypes from 'prop-types';
 
 const Nav = ({ elements, logo, liElements }) => {
-
 
     return (
             <nav>

@@ -1,4 +1,4 @@
-import './index.css';
+import './NavMobile.css';
 import './menu.css';
 import { useState, useRef, useEffect } from 'react';
 

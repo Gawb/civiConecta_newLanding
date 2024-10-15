@@ -30,7 +30,8 @@
     }
     .review-box.open .review{
         font-size: 3.4vw;
-        margin: 0px 1.6vw 52vw;
+        margin: 0px 1.6vw 48vw;
+        height: 56vw;
     }
     .more-button {
         font-size: 4vw;

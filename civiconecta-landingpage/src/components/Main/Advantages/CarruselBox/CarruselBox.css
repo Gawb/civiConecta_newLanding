@@ -7,6 +7,7 @@
     align-items: center;
     margin: 0vw;
     transition: all 0.5s ease;
+    box-shadow: 0vw 2vw 1vw rgba(0, 0, 0, 0.1);
 }
 
 .carruselBox.active {

@@ -1,4 +1,4 @@
-import './index.css';
+import './Home.css';
 import './homeMobile.css';
 import heartEyes from './Heart Eyes - Square - Civicon.svg';
 

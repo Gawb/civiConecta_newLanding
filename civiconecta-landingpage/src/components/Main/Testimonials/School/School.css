@@ -3,7 +3,7 @@
     height: 30vw;
     background-color: var(--white);
     margin: 0 1vw;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0vw 1.6vw 1vw rgba(0, 0, 0, 0.1);
     border: 0.2vw solid var(--pinkCivi);
     border-radius: 1vw;
     display: flex;
@@ -54,7 +54,6 @@
 .review-box.close {
     overflow: hidden;
     max-height: 5.2vw;
-    /* Altura inicial */
     transition: max-height 0.3s ease;
 }
 
@@ -67,7 +66,7 @@
     color: var(--greyCivi);
     font-size: 1.2vw;
     text-align: left;
-    height: 5.2vw;
+    height: 5vw;
 }
 
 .review-box.open .review {

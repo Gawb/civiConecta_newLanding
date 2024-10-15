@@ -20,8 +20,6 @@ const School = ({ schoolData }) => {
         setIsOpen(updatedIsOpen);
     };
 
-    console.log(isOpen);
-
     const moreButtom = (review, index) => {
 
         if (review.length > 100) {

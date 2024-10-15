@@ -1,0 +1,121 @@
+.contact{
+    display: flex;
+    justify-content: center;
+}
+.contact-container{
+    background-color: var(--greenCiviOpa);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 4vw 6vw;
+    margin: 6vw;
+    border-radius: 1.2vw;
+    width: 66vw;
+    position: relative;
+}
+.contact-container img{
+    width: 6vw;
+    margin-bottom: 2vw;
+}
+.contact-container h2{
+    color: var(--greenCivi);
+    width: 32vw;
+    margin-bottom: 0.4vw;
+    font-size: 2vw;
+
+}
+.contact-container p{
+    color: var(--blackCivi);
+    font-size: 1.2vw;
+    width: 32vw;
+    margin-bottom: 2vw;
+}
+.contact-info p{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    width: 16vw;
+}
+.contact-info p img{
+    width: 2vw;
+    margin: 0;
+}
+.form-section{
+    background-color: var(--greenCivi);
+    border-radius: 1.2vw;
+    width: 30vw;
+    height: 36vw;
+    position: absolute;
+    top:-3vw;
+    right: 4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0vw 2vw 1vw rgba(0, 0, 0, 0.1);
+}
+.form-section h3 {
+    color: var(--white);
+    margin: 1vw;
+    text-align: left;
+    width: 26vw;
+    font-size: 1.8vw;
+}
+.form-section input{
+    width: 26vw;
+    height: 2.6vw;
+    margin: 1vw 0;
+    padding-left: 1vw;
+    border-radius: 1vw;
+    font-size: 1.2vw;
+    border: none;
+}
+.form-section input::placeholder{
+    text-align: left;
+    color: var(--greenCivi);
+    font-weight: 600;
+    font-size: 1vw;
+    font-family: 'Nunito', sans-serif;
+}
+.form-section input:focus{
+    outline: none;
+}
+.form-section textarea{
+    height: 8vw;
+    width: 26vw;
+    margin: 1vw 0;
+    padding-left: 1vw;
+    border-radius: 1vw;
+    font-size: 1.2vw;
+    border: none;
+}
+.form-section textarea::placeholder {
+    text-align: left;
+    color: var(--greenCivi);
+    font-weight: 600;
+    padding-top: 0.4vw;
+    font-size: 1vw;
+    font-family: 'Nunito', sans-serif;
+}
+.form-section textarea:focus{
+    outline: none;
+}
+.form-section button{
+    width: 26vw;
+    height: 4vw;
+    border-radius: 1vw;
+    border: 0.2vw solid var(--white);
+    background-color: var(--greenCivi);
+    color: var(--white);
+    font-size: 1.6vw;
+    font-weight: bold;
+    cursor: pointer;
+}
+.error {
+    color: var(--pinkCivi);
+    font-size: 1.2vw;
+    font-weight: 600;
+    width: 26vw;
+    text-align: left;
+}

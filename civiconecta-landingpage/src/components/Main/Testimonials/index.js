@@ -62,7 +62,7 @@ const Testimonials = ({imgArrow}) => {
         }
         transitionTimeout.current = setTimeout(() => {
             setIsTransitioning(false);
-        }, 500); // Duración de la transición
+        }, 500);
 
         return () => clearTimeout(transitionTimeout.current);
     }, [activeIndex]);
