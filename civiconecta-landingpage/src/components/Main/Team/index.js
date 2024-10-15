@@ -12,9 +12,9 @@ const Team = () => {
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [startTouchX, setStartTouchX] = useState(null);
     const transitionTimeout = useRef(null);
-    const [activeIndex, setActiveIndex] = useState(1); // Iniciamos en 1 (no 0 para evitar problemas)
+    const [activeIndex, setActiveIndex] = useState(1);
 
-    const totalSlides = memberDetails.photo.length; // Número total de slides
+    const totalSlides = memberDetails.photo.length;
 
     const prevSlide = () => {
         if (isTransitioning) return;
@@ -63,7 +63,7 @@ const Team = () => {
         }
         transitionTimeout.current = setTimeout(() => {
             setIsTransitioning(false);
-        }, 500); // Duración de la transición
+        }, 500);
 
         return () => clearTimeout(transitionTimeout.current);
     }, [activeIndex]);

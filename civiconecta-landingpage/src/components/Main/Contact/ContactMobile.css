@@ -3,6 +3,7 @@
     .contact-container{
         width: 65vw;
         border-radius: 4vw;
+        margin-bottom: 100vw;
     }
     .contact-container img{
         width: 14vw;

@@ -4,14 +4,15 @@
     flex-direction: column;
     align-items: center;
     user-select: none;
-    margin: 8vw 0;
+    margin: 4vw 0;
+    width: 98vw;
 }
 
 .advantages h2 {
-    margin: 6vw;
-    width: 38vw;
+    margin: 4vw;
+    width: 34vw;
     text-align: center;
-    font-size: 2.4vw;
+    font-size: 2.2vw;
 }
 
 .carrusel-container-element {
@@ -19,7 +20,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 38vw;
+    height: 33vw;
 }
 
 .carrusel-container {
@@ -27,7 +28,8 @@
     justify-content: center;
     align-items: center;
     overflow-x: hidden;
-    width: 80vw;
+    width: 64vw;
+    height: 33vw;
     position: relative;
 }
 
@@ -36,7 +38,7 @@
     width: 80vw;
     overflow-x: hidden;
     justify-content: center;
-    height: 46vw;
+    height: 33vw;
 }
 
 .carrusel-arrow {
@@ -48,8 +50,8 @@
 
 .carrusel-arrow .icon-arrow {
     fill: var(--blueCivi);
-    width: 4vw;
-    height: 4vw;
+    width: 3vw;
+    height: 3vw;
     border: 1px solid var(--blueCivi);
     border-radius: 50%;
     cursor: pointer;
@@ -75,14 +77,14 @@
 
 .advantages ul {
     display: flex;
-    margin-left: 5.6vw;
+    margin-left: 5.4vw;
 }
 
 .advantages .point {
     color: var(--greypointCivi);
     width: 0vw;
-    margin: 1.5vw;
-    font-size: 4vw;
+    margin: 1.2vw;
+    font-size: 3.4vw;
 }
 
 .advantages .point.point-selected {

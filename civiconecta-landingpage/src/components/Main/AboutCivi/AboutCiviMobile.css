@@ -3,11 +3,11 @@
     .article-about{
         margin-top: 26vw;
     }
-    .article-about div h2{
+    .article-about .about-title h2{
         font-size: 6vw;
     }
-    .article-about div h2 img{
-        width: 56vw;
+    .article-about .about-title h2 img{
+        width: 54vw;
     }
     .video-civi iframe{
         width: 88vw;
@@ -27,7 +27,7 @@
     }
     .quote-icon{
 
-        width: 20vw;
+        width: 18vw;
         transform: rotate(0deg);
         margin: 1vw;
     }

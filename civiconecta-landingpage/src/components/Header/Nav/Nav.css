@@ -1,64 +1,76 @@
-nav{
+nav {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 2vw;
-    padding: 0 8vw;
+    padding: 0 0vw;
     user-select: none;
+    width: 75vw;
 }
+
 .logo-container {
     width: 12vw;
 }
-.logo-container img{
-    width: 100%;
+
+.logo-container img {
+    width: 12vw;
 }
-.nav-elements{
-    width: 60vw;
+
+.nav-elements {
+    width: 52vw;
     display: flex;
-    justify-content: center;
+    justify-content: end;
 }
-.nav-elements ul{
+
+.nav-elements ul {
     display: flex;
     list-style: none;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
     width: 86%;
 }
+
 .nav-elements ul li {
-    padding: 2% 4%;
+    padding: 0.4vw 1vw;
     color: var(--blackCivi);
     font-size: 1.2vw;
     font-weight: bold;
 }
-.nav-elements ul li:hover{
+
+.nav-elements ul li:hover {
     color: var(--blueCivi);
     cursor: pointer;
 }
-/* ---About Civi___ */
-.nav-elements #element-1{
+
+.nav-elements #element-1 {
     display: flex;
     align-items: center;
     padding: 0%;
 }
-.nav-elements #element-1:hover{
+
+.nav-elements #element-1:hover {
     background-color: var(--blueCivi);
     color: var(--whiteCivi);
     transition: 0.3s;
 }
-.nav-elements #element-1 div{
+
+.nav-elements #element-1 div {
     padding: 2% 4%;
     width: 10.2vw;
 }
-nav #element-1 .icon-arrow{
+
+nav #element-1 .icon-arrow {
     width: 30%;
     rotate: 180deg;
     transition: 0.3s;
     fill: var(--blackCivi);
 }
-nav #element-1:hover .icon-arrow{
+
+nav #element-1:hover .icon-arrow {
     transform: rotate(180deg);
     fill: var(--whiteCivi);
 }
+
 .nav-elements #element-1 ul {
     background-color: var(--whiteCivi);
     position: absolute;
@@ -68,44 +80,49 @@ nav #element-1:hover .icon-arrow{
     box-shadow: 0px 10px 10px rgba(78, 78, 78, 0.2);
     z-index: 1;
     left: 0;
-    max-height: 0; /* Oculto por defecto */
-    opacity: 0; /* Oculto por defecto */
-    transform: translateY(-10px); /* Un ligero movimiento hacia arriba */
-    transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
-    overflow: hidden; /* Para ocultar el contenido cuando no está visible */
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
 }
 
 .nav-elements #element-1:hover ul {
-    max-height: 200px; /* Un valor lo suficientemente alto para el contenido */
-    opacity: 1; /* Totalmente visible cuando está abierto */
-    transform: translateY(0); /* Vuelve a su posición original */
+    max-height: 200px;
+    opacity: 1;
+    transform: translateY(0);
 }
-.nav-elements #element-1 ul li{
+
+.nav-elements #element-1 ul li {
     font-weight: normal;
     padding: 10% 6%;
 }
-.nav-elements #element-1 ul li:nth-child(1){
+
+.nav-elements #element-1 ul li:nth-child(1) {
     border-bottom: 1px solid rgb(168, 168, 168);
 }
-.nav-elements .button-container{
+
+nav .button-container {
     width: 10vw;
     display: flex;
     align-items: center;
 }
-.nav-elements .button-container button{
+
+nav .button-container button {
     background-color: var(--pinkCivi);
     color: var(--whiteCivi);
-    padding: 6%;
-    border: 0.2em solid  var(--pinkCivi);
-    border-radius: 1.2em;
+    padding: 0.4vw 0;
+    border: 0.2em solid var(--pinkCivi);
+    border-radius: 1.4vw;
     font-size: 1.2vw;
     font-weight: bold;
-    width: 100%;
+    width: 8vw;
     cursor: pointer;
     transition: 0.3s;
     user-select: none;
 }
-.nav-elements .button-container button:hover{
+
+nav .button-container button:hover {
     background-color: var(--whiteCivi);
     color: var(--pinkCivi);
 }

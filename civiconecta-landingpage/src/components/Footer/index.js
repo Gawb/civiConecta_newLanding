@@ -1,4 +1,5 @@
 import './Footer.css';
+import './FooterMobile.css';
 import LogoFooter from './CiviConecta - Blanco.svg';
 import Linkedin from './icons/LinkedIn - Circle - Civicon.svg';
 import Instagram from './icons/Instagram - Circle - Civicon.svg';
@@ -19,7 +20,7 @@ const Footer = ({elements}) => {
         elements.map((element, index) => (
             index === 0 ? null : (
                 <li id={`${element.slice(0, 3)}-${index}`} key={index}>
-                    {element}
+                    {index=== 1 ? element+'conecta': element}
                 </li>
             )
         ))
@@ -45,8 +46,7 @@ const Footer = ({elements}) => {
             </section>
             <div className='copyrigth-container'>
                 <p>{copyRigthInfo.local}</p>
-                <p>{copyRigthInfo.year}</p>
-                <p>{copyRigthInfo.message}</p>
+                <p>{copyRigthInfo.year} {copyRigthInfo.message}</p>
             </div>
         </footer>
     )

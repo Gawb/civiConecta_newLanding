@@ -5,12 +5,15 @@ footer{
     border-radius: 2vw 2vw 0 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    user-select: none;
 }
 .footer-elements{
     display: flex;
     align-items: center;
     justify-content: space-around;
     height: 10vw;
+    width: 84vw;
 }
 .logo-footer-container{
     display: flex;
@@ -19,13 +22,13 @@ footer{
     width: 18vw;
 }
 .logo-footer-container img{
-    width: 12vw;
+    width: 10vw;
 }
 .element-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40vw;
+    width: 42vw;
 }
 .element-container ul {
     display: flex;
@@ -35,16 +38,24 @@ footer{
 .element-container ul li{
     list-style: none;
     color: var(--white);
-    margin: 0.4vw;
-    font-size: 1.6vw;
+    margin: 0.6vw;
+    font-size: 1.4vw;
+    font-weight: 300;
     cursor: pointer;
+    transition: all 0.6s;
+}
+.element-container ul li:hover{
+    color: var(--CelesteCivi);
 }
 .social-container{
     display: flex;
 }
 .social-container a img{
-    width: 4.8vw;
+    width: 4.2vw;
     cursor: pointer;
+}
+.social-container a .st2{
+ fill: var(--CelesteCivi);
 }
 .copyrigth-container {
     display: flex;
@@ -54,5 +65,5 @@ footer{
 }
 .copyrigth-container p{
     color: var(--white);
-    font-size: 1.6vw;
+    font-size: 1.2vw;
 }

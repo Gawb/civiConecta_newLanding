@@ -1,5 +1,4 @@
 import './Nav.css';
-import PropTypes from 'prop-types';
 
 const Nav = ({ elements, logo, liElements }) => {
 
@@ -12,16 +11,14 @@ const Nav = ({ elements, logo, liElements }) => {
                     <ul>
                         {liElements(elements)}
                     </ul>
-                    <div className="button-container">
+                </div>
+                <div className="button-container">
                         <button>Ingresar</button>
-                    </div>
                 </div>
             </nav>
     );
 }
 
-Nav.propTypes = {
-    elements: PropTypes.arrayOf(PropTypes.string),
-};
+
 
 export { Nav };

@@ -110,7 +110,7 @@ const Advantages = ({ imgArrow }) => {
                             :
                             <div className='carrusel-boxes'
                                 style={{
-                                    transform: `translateX(calc(-${activeIndex} * 100% / ${extendedCarouselElements.img.length} + 46% - 3vw))`,
+                                    transform: `translateX(calc(-${activeIndex} * 100% / ${extendedCarouselElements.img.length} + 46% - 2vw))`,
                                     transition: isTransitioning ? 'transform 0.5s ease' : 'none',
                                 }}
                             >

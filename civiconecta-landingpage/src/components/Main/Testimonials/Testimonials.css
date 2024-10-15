@@ -1,5 +1,5 @@
 .testimonials{
-    width: 100%;
+    width: 98vw;
     background-image: url('./BG---Civi-Red---Testimonios.jpg');
     background-size: cover;
     display: flex;
@@ -11,8 +11,8 @@
 
 .testimonials h2{
     color: var(--pinkCivi);
-    font-size: 2.8vw;
-    width: 34vw;
+    font-size: 2.4vw;
+    width: 30vw;
     margin: 4vw 0;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .testimonial_carruse_arrow{
-    width:4.6vw;
+    width:3vw;
     border: 0.2vw solid var(--pinkCivi);
     display: flex;
     align-items: center;
@@ -32,8 +32,9 @@
     border-radius: 6vw;
     fill: var(--pinkCivi);
     cursor: pointer;
-    margin: 2vw;
+    margin: 1vw;
 }
+
 .testimonial_carruse_arrow.left{
     rotate: -90deg;
 }
