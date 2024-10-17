@@ -82,7 +82,7 @@ const Team = () => {
 
 
     return (
-        <article className='team-section'>
+        <article className='team-section' id='Profesionales-section'>
             <section className='team-info'>
                 <h2>{teamTitle}</h2>
                 <p>{teamMesagge}</p>

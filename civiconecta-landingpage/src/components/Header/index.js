@@ -9,14 +9,29 @@ const widthScreen = 498;
 const Header = ({ elements, imgArrow }) => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= widthScreen);
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+    const [url, setUrl] = useState('');
     const menuRef = useRef(null);
+
+
+
+    const handleClick = (anchor) => (event) => {
+        event.preventDefault();
+        const id = `${anchor}-section`;
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+        setUrl(`#${anchor}-section`)
+      };
 
     const handleResize = () => {
         setIsMobile(window.innerWidth <= widthScreen);
     };
 
     const toggleSubMenu = (e) => {
-        e.stopPropagation();
         setIsSubMenuOpen((prevState) => !prevState);
     };
 
@@ -58,12 +73,13 @@ const Header = ({ elements, imgArrow }) => {
                             {element} {imgArrow}
                         </div>
                         <ul className={`submenu ${isSubMenuOpen ? 'open-submenu' : ''}`}>
-                            <li>Nuestro Servicio</li>
-                            <li>Ventajas</li>
+                            <li><a onClick={handleClick('about')} href={`#about-section`}>Nuestro Servicio</a></li>
+                            <li><a onClick={handleClick('advantajes')} href={`#advantajes-section`}>Ventajas</a></li>
                         </ul>
                     </div>
                 ) : (
-                    element
+                    <a onClick={handleClick(element)} href={`#${element}-section`}>{element}</a>
+
                 )}
             </li>
         ));

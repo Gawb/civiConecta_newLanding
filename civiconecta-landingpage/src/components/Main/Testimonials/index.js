@@ -78,7 +78,7 @@ const Testimonials = ({imgArrow}) => {
 
 
 return (
-    <article className='testimonials'>
+    <article className='testimonials' id='Testimonios-section'>
         <h2>{title}</h2>
         <div className='testimonials_carrusel'>
             <div className='testimonial_carruse_arrow left'>

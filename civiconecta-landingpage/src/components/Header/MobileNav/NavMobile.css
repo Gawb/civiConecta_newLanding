@@ -8,6 +8,14 @@ nav{
     padding: 0;
 
 }
+nav.change{
+    background-color: var(--blueCiviNav);
+    position: fixed;
+    z-index: 2;
+    margin: 0;
+    padding: 1vw;
+    top: 0;
+}
 .burger-icon-container{
     width: 10vw;
     display: flex;
@@ -18,12 +26,21 @@ nav{
     fill: var(--blueCivi);
     width: 20vw;
     cursor: pointer;
+    transition: all 0.3s;
+}
+nav.change .burger-icon{
+    fill: var(--white);
 }
 nav .logo-container{
-    width: 20vw;
+    width: 22vw;
 }
+
 nav .logo-container img{
     width: 30vw;
+}
+nav.change  .logo-container img{
+    width: 28vw;
+    margin: 2vw 0;
 }
 nav .button-container{
     width: 24vw;
@@ -40,10 +57,15 @@ nav .button-container button {
     background-color: var(--pinkCivi);
     border: none;
     border-radius: 6vw;
-    font-size: 3.8vw;
+    font-size: 3.4vw;
     color: var(--whiteCivi);
-    width: 24vw;
+    width: 22vw;
     padding: 2vw;
+}
+
+nav.change .button-container button {
+    background-color: var(--white);
+    color: var(--blueCivi);
 }
 
 }

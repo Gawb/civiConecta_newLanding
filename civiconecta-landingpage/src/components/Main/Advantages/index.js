@@ -87,7 +87,7 @@ const Advantages = ({ imgArrow }) => {
     }, []);
 
     return (
-        <article className='advantages'>
+        <article className='advantages' id='advantajes-section'>
             <h2>{advantageTitle}</h2>
             <div className='carrusel-container-element'>
                 <div className='carrusel-arrow left-arrow' onClick={prevSlide}>

@@ -9,7 +9,7 @@ const homeInfo = {
 
 const Home = () => {
     return (
-        <article className='article-home'>
+        <article className='article-home' id='Inicio-section'>
             <section className='home-container'>
                 <div className='home-info'>
                     <img src={heartEyes} alt='heart eyes icon'/>

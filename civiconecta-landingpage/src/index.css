@@ -2,16 +2,23 @@
       /* color variables */
       --greenCivi:      #96cb76;
       --greenCiviOpa:   #96cb7620;
+
       --pinkCivi:       #ec5f7b;
       --pinkCiviOpa:    #ec5f7b20;
+
       --blueCivi:       #7468e5;
       --blueCiviDark:   #645cd4;
       --blueCiviOpa:    #7468e520;
+      --blueCiviNav:    #7468e599;
+
       --yellowCivi:     #f5cf57;
+
       --blackCivi:      #4d4d4d;
+
       --greyCivi:       #808080;
       --greypointCivi:  #cccccc ;
       --greyCiviOpa:    #80808020;
+
       --whiteCivi:      #f2f2f2;
       --white:          #ffffffff;
 

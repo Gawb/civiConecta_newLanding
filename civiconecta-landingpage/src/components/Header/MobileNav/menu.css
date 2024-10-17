@@ -31,6 +31,7 @@
     justify-content: center;
     align-items: center;
     width: 30vw;
+    height: 20vw;
 }
 .burger-icon-container_menu{
     width: 12vw;
@@ -40,11 +41,13 @@
 }
 .burger-icon-container_menu .burger-icon{
     fill: var(--whiteCivi);
-    width: 12vw;
+    width: 10vw;
 }
 .img-logo-icon{
     fill: var(--white);
-    width: 100%;
+    width: 24vw;
+    height: 24vw;
+    margin-top: 2vw;
 }
 .close-icon-container{
  background-color: var(--whiteCivi);
@@ -52,10 +55,12 @@
  justify-content: center;
  align-items: center;
  border-radius: 50%;
+ width: 10vw;
+ height: 10vw;
 }
 .close-icon{
     fill: var(--pinkCivi);
-    width: 76%;
+    width: 8vw;
 }
 .menu-elements-container{
     display: flex;
@@ -64,17 +69,37 @@
     text-align: center;
     align-items: center;
 }
+.menu-elements-container>ul{
+    margin: 2vw 0;
+}
 .menu-elements-container ul li{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 6% 0;
+    width: 100vw;
 }
-.menu-elements-container .icon-arrow{
+.menu-elements-container ul li a{
+    text-decoration: none;
+    color: var(--whiteCivi);
+    text-align: center;
+    width: 48vw;
+    font-size: 6vw;
+}
+.menu-elements-container #element-1{
+    font-size: 6vw;
+}
+/* .menu-elements-container .icon-arrow{
     fill: var(--whiteCivi);
-    width: 14%;
+    transition: 0.3s;
+} */
+.menu-elements-container #element-1 .icon-arrow{
+    width: 10vw;
+    fill: var(--whiteCivi);
     transition: 0.3s;
 }
+
 .menu-elements-container .sub-element .icon-arrow:nth-child(1){
     rotate: 180deg;
 }
@@ -101,16 +126,21 @@
     max-height: 200px;
     opacity: 1;
     transform: translateY(0);
+    width: 100vw;
 }
+.submenu.open-submenu li a{
+    width: 58vw;
+}
+
 .menu-elements-container button {
     background-color: var(--pinkCivi);
     border: none;
     border-radius: 6vw;
-    font-size: 6.8vw;
+    font-size: 6vw;
     font-weight: 550;
     color: var(--whiteCivi);
     width: 66vw;
-    padding: 2.8vw;
+    padding: 2vw 2.8vw;
     margin: 2vw 0 26vw;
 }
 }

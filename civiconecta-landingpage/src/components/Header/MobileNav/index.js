@@ -1,14 +1,27 @@
 import './NavMobile.css';
 import './menu.css';
+import logoW from '../../Footer/CiviConecta - Blanco.svg';
 import { icons } from './iconsMobileNav';
 import { useState, useRef, useEffect } from 'react';
 
 const buttonText = 'Ingresar';
+const scrollStartValue = 0;
+
 
 const MobileNav = ({ elements, logo, liElements }) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const menuRef = useRef(false);
+    const [scrollPosition, setScrollPosition] = useState(false);
+    const [navChange, setNavChange] = useState('');
+
+
+    const handleTouchStart = (event) => {
+        const touchedElement = event.target;
+        if (touchedElement.tagName === 'A'){
+            setIsOpen(false);
+        }
+    };
 
     const handleClickOutside = (event) =>{
         if(menuRef.current && !menuRef.current.contains(event.target)){
@@ -19,6 +32,32 @@ const MobileNav = ({ elements, logo, liElements }) => {
         setIsOpen(!isOpen);
     };
 
+    const handleScroll = () => {
+        let scrollTop = document.documentElement.scrollTop;
+
+        if(scrollTop > scrollStartValue){
+            setScrollPosition(true);
+        }else{
+            setScrollPosition(false);
+        }
+    };
+
+    useEffect(() =>{
+        scrollPosition? setNavChange('change'):setNavChange('');
+    }, [scrollPosition]);
+
+
+    useEffect(() =>{
+        window.addEventListener('scroll', handleScroll);
+    }, []);
+
+    useEffect(() => {
+        document.addEventListener('touchstart', handleTouchStart);
+        return () => {
+            document.removeEventListener('touchstart', handleTouchStart);
+        };
+    }, []);
+
     useEffect(() =>{
         document.addEventListener('touchstart', handleClickOutside);
         return () =>{
@@ -28,7 +67,7 @@ const MobileNav = ({ elements, logo, liElements }) => {
 
     return (
         <>
-            <nav>
+            <nav className={navChange}>
                 <div
                     onClick={toggleMenu}
                     aria-expanded={isOpen}
@@ -37,7 +76,7 @@ const MobileNav = ({ elements, logo, liElements }) => {
                     {icons.burgerIcon}
                 </div>
                 <div className='logo-container'>
-                    <img src={logo} alt='Logo civiconecta' />
+                    <img src={navChange === 'change'?logoW:logo} alt='Logo civiconecta' />
                 </div>
                 <div className="button-container">
                     <button>{buttonText}</button>
@@ -57,10 +96,10 @@ const MobileNav = ({ elements, logo, liElements }) => {
                     </div>
                 </div>
                 <div className='menu-elements-container'>
-                    <ul>
+                    <ul onTouchStart={handleTouchStart}>
                         {liElements(elements)}
                     </ul>
-                    <button>{buttonText}</button>
+                    <button onClick={() => window.location.href = 'https://plataforma.civiconecta.cl/login'}>{buttonText}</button>
                 </div>
             </div>
         </>

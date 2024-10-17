@@ -39,6 +39,8 @@
     }
     .element-container ul li{
         margin: 0.4vw;
+    }
+    .element-container ul li a{
         font-size: 4vw;
         font-weight: 300;
     }

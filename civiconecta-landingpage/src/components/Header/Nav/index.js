@@ -1,6 +1,8 @@
 import './Nav.css';
 
+
 const Nav = ({ elements, logo, liElements }) => {
+
 
     return (
             <nav>
@@ -13,7 +15,7 @@ const Nav = ({ elements, logo, liElements }) => {
                     </ul>
                 </div>
                 <div className="button-container">
-                        <button>Ingresar</button>
+                        <button onClick={() => window.location.href = 'https://plataforma.civiconecta.cl/login'}>Ingresar</button>
                 </div>
             </nav>
     );
@@ -22,3 +24,4 @@ const Nav = ({ elements, logo, liElements }) => {
 
 
 export { Nav };
+

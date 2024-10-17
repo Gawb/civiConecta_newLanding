@@ -1,11 +1,14 @@
 import './Contact.css';
 import './ContactMobile.css';
+import './popup.css';
 import handIcon from './icon/Hi Hand - Square - Civicon.svg';
 import letter from './icon/Letter - Civicon.svg';
 import telephone from './icon/Telephone - Civicon.svg';
 import {contactData, formInfo, errorMessage} from './contactData';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { useState } from 'react';
+
 
 
 const validationSchema = Yup.object({
@@ -16,6 +19,13 @@ const validationSchema = Yup.object({
 });
 
 const Contact = () => {
+
+    const [showPopup, setShowPopup] = useState(false);
+    const [popupMessage, setPopupMessage] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+
+
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -24,14 +34,45 @@ const Contact = () => {
             message: ''
         },
         validationSchema: validationSchema,
-        onSubmit: values => {
-            // Aquí puedes manejar lo que ocurre al enviar el formulario
+        onSubmit: (values, {resetForm}) => {
             console.log('Formulario enviado:', values);
+            setPopupMessage('Enviando...');
+            setShowPopup(true);
+            setIsSubmitting(true);
+
+            const formData = new FormData();
+            formData.append('Nombre', values.name);
+            formData.append('Institución', values.school);
+            formData.append('Email', values.email);
+            formData.append('Mensaje', values.message);
+
+            fetch('https://formsubmit.co/47b4a80db01ff44acdb8263c88ff76c8', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json',
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    setPopupMessage('Formulario enviado con éxito');
+                    setShowPopup(true);
+                    resetForm();
+                } else {
+                    setPopupMessage('Error al enviar el formulario');
+                    setShowPopup(true);
+                }
+            })
+            .catch(error => {
+                setPopupMessage('Hubo un problema con el envío del formulario');
+                setShowPopup(true);
+                console.error('Error:', error);
+            });
         }
     });
 
     return (
-        <article className='contact'>
+        <article className='contact' id='Contacto-section'>
             <section className='contact-container'>
                 <img src={handIcon} alt="hand icon" />
                 <h2>{contactData.tittle}</h2>
@@ -77,6 +118,19 @@ const Contact = () => {
                         {formik.touched.message && formik.errors.message ? <div className="error">{formik.errors.message}</div> : null}
                         <button type="submit">{formInfo.textButton}</button>
                     </form>
+
+                    {showPopup && (
+                        <div className="popup">
+                            <div>
+                                {isSubmitting ?
+                                <div className="spinner"></div>
+                                : <p>{popupMessage}</p>}
+                            </div>
+                            {!isSubmitting && (
+                            <button onClick={() => setShowPopup(false)}>Cerrar</button>
+                            )}
+                        </div>
+                    )}
             </section>
         </article>
     );
