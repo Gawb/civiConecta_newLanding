@@ -13,8 +13,9 @@
     width: 66vw;
     position: relative;
 }
-.contact-container img{
+.contact-container>img{
     width: 6vw;
+    height: 6vw;
     margin-bottom: 2vw;
 }
 .contact-container h2{
@@ -38,8 +39,9 @@
     width: 16vw;
 }
 .contact-info p img{
-    width: 2vw;
-    margin: 0;
+    width: 2.2vw;
+    height: 2.2vw;
+    margin: 0 1vw;
 }
 .form-section{
     background-color: var(--greenCivi);

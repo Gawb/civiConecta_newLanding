@@ -13,7 +13,6 @@ const Advantages = ({ imgArrow }) => {
     const [startTouchX, setStartTouchX] = useState(null);
     const transitionTimeout = useRef(null);
 
-
     const prevSlide = () => {
         if (isTransitioning) return;
         setIsTransitioning(true);
@@ -25,10 +24,12 @@ const Advantages = ({ imgArrow }) => {
         setIsTransitioning(true);
         setActiveIndex((prevIndex) => prevIndex + 1);
     };
+
     const handleTouchStart = (e) => {
         const touchX = e.touches[0].clientX;
         setStartTouchX(touchX);
     };
+
     const handleTouchMove = (e) => {
         if (!startTouchX) return;
         const touchX = e.touches[0].clientX;
@@ -42,6 +43,7 @@ const Advantages = ({ imgArrow }) => {
             setStartTouchX(null);
         }
     };
+
     const handleTouchEnd = () => {
         setStartTouchX(null);
     };
@@ -60,12 +62,12 @@ const Advantages = ({ imgArrow }) => {
         if (activeIndex === 0) {
             transitionTimeout.current = setTimeout(() => {
                 setIsTransitioning(false);
-                setActiveIndex(carruselElements.img.length); // Saltar al penúltimo (sin transición)
-            }, 500); // Esperar a que termine la transición
+                setActiveIndex(carruselElements.img.length);
+            }, 500); 
         } else if (activeIndex === extendedCarouselElements.img.length - 1) {
             transitionTimeout.current = setTimeout(() => {
                 setIsTransitioning(false);
-                setActiveIndex(1); // Saltar al segundo (sin transición)
+                setActiveIndex(1); 
             }, 500);
         } else {
             transitionTimeout.current = setTimeout(() => {
@@ -87,43 +89,49 @@ const Advantages = ({ imgArrow }) => {
     }, []);
 
     return (
-        <article className='advantages' id='advantajes-section'>
-            <h2>{advantageTitle}</h2>
-            <div className='carrusel-container-element'>
-                <div className='carrusel-arrow left-arrow' onClick={prevSlide}>
+        <article className='advantages' id='advantajes-section' aria-labelledby="advantages-title">
+            <h2 id="advantages-title">{advantageTitle}</h2>
+            <div className='carrusel-container-element' role="region" aria-label="Carrusel de ventajas">
+                <div
+                    className='carrusel-arrow left-arrow'
+                    onClick={prevSlide}
+                    aria-label="Previous slide"
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') prevSlide(); }}
+                >
                     {imgArrow}
                 </div>
-                <div className='carrusel-container'
+                <div
+                    className='carrusel-container'
                     onTouchStart={handleTouchStart}
                     onTouchMove={handleTouchMove}
-                    onTouchEnd={handleTouchEnd}>
+                    onTouchEnd={handleTouchEnd}
+                    aria-hidden="true"
+                >
                     <div className='boxes-container'>
-                        {isMobile ?
-                            <div className='carrusel-boxes'
-                                style={{
-                                    transform: `translateX(calc(-${activeIndex} * 100% / ${extendedCarouselElements.img.length} + 46% - 8vw))`,
-                                    transition: isTransitioning ? 'transform 0.5s ease' : 'none',
-                                }}
-                            >
-                                <CarruselBox carruselElements={extendedCarouselElements} activeIndex={activeIndex} imgArrow={imgArrow} />
-                            </div>
-                            :
-                            <div className='carrusel-boxes'
-                                style={{
-                                    transform: `translateX(calc(-${activeIndex} * 100% / ${extendedCarouselElements.img.length} + 46% - 2vw))`,
-                                    transition: isTransitioning ? 'transform 0.5s ease' : 'none',
-                                }}
-                            >
-                                <CarruselBox carruselElements={extendedCarouselElements} activeIndex={activeIndex} imgArrow={imgArrow} />
-                            </div>
-                        }
+                        <div className='carrusel-boxes'
+                            style={{
+                                transform: `translateX(calc(-${activeIndex} * 100% / ${extendedCarouselElements.img.length} + 46% - ${isMobile ? '8vw' : '2vw'}))`,
+                                transition: isTransitioning ? 'transform 0.5s ease' : 'none',
+                            }}
+                        >
+                            <CarruselBox carruselElements={extendedCarouselElements} activeIndex={activeIndex} imgArrow={imgArrow} />
+                        </div>
                     </div>
                 </div>
-                <div className='carrusel-arrow right-arrow' onClick={nextSlide}>
+                <div
+                    className='carrusel-arrow right-arrow'
+                    onClick={nextSlide}
+                    aria-label="Next slide"
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') nextSlide(); }}
+                >
                     {imgArrow}
                 </div>
             </div>
-            <ul>
+            <ul aria-label="Indicadores de navegación">
                 {liPoints(carruselElements, activeIndex)}
             </ul>
         </article>

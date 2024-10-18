@@ -14,6 +14,7 @@ nav {
 
 .logo-container img {
     width: 12vw;
+    height: 6vw;
 }
 
 .nav-elements {
@@ -51,15 +52,19 @@ nav {
 
 .nav-elements #element-1:hover {
     background-color: var(--blueCivi);
-    color: var(--whiteCivi);
     transition: 0.3s;
+    color: var(--whiteCivi);
 }
 
 .nav-elements #element-1 div {
     padding: 2% 4%;
     width: 10.2vw;
     font-size: 1.2vw;
+    color: var(--blackCivi);
     font-weight: bold;
+}
+.nav-elements #element-1 div:hover {
+    color: var(--whiteCivi);
 }
 
 nav #element-1 .icon-arrow {
@@ -91,7 +96,7 @@ nav #element-1:hover .icon-arrow {
 }
 
 .nav-elements #element-1:hover ul {
-    max-height: 200px;
+    max-height: 8vw;
     opacity: 1;
     transform: translateY(0);
 }

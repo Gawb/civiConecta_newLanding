@@ -1,11 +1,11 @@
 import './Team.css';
 import './TeamMobile.css';
-import { Member } from './Member'
+import { Member } from './Member';
 import { memberDetails } from './Member/memberInfo';
 import { useState, useEffect, useRef } from 'react';
 
 const teamTitle = '¿Quiénes forman parte de nuestro equipo?';
-const teamMesagge = 'Hola, al igual que tú, trabajamos en las aulas chilenas y con nuestra experiencia queremos ayudarte a desarrollar todo el potencial de tus estudiantes. ¡Te invitamos a conocernos!';
+const teamMessage = 'Hola, al igual que tú, trabajamos en las aulas chilenas y con nuestra experiencia queremos ayudarte a desarrollar todo el potencial de tus estudiantes. ¡Te invitamos a conocernos!';
 
 const Team = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
@@ -77,35 +77,41 @@ const Team = () => {
                 style={{
                     backgroundColor: index === (activeIndex - 1) ? `var(${color})` : 'lightgray'
                 }}
+                role="button"
+                aria-label={`Deslizar a ${index + 1} de ${totalSlides}`}
+                tabIndex={0} // Permitir que el elemento sea enfocado por teclado
+                onClick={() => setActiveIndex(index + 1)} // Permitir navegación mediante clic
+                onKeyDown={(e) => e.key === 'Enter' && setActiveIndex(index + 1)} // Permitir navegación mediante teclado
             ></li>
         ));
 
-
     return (
-        <article className='team-section' id='Profesionales-section'>
+        <article className='team-section' id='Profesionales-section' aria-labelledby="team-title">
             <section className='team-info'>
-                <h2>{teamTitle}</h2>
-                <p>{teamMesagge}</p>
+                <h2 id="team-title">{teamTitle}</h2>
+                <p>{teamMessage}</p>
             </section>
             <section className='team-members'
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
+                aria-label="Miembros del equipo"
+                aria-live="polite"
             >
-            {isMobile ?
-                <div className='team-members_slide'
-                    style={{
-                        transform: `translateX(calc(-${activeIndex * 78}vw + 90vw))`,
-                        transition: isTransitioning ? 'transform 0.5s ease' : 'none',
-                    }}
-                >
-                    <Member memberDetails={memberDetails} />
-                </div>
-                :
-                <div className='team-members_slide'>
-                    <Member memberDetails={memberDetails} />
-                </div>
-            }
+                {isMobile ? (
+                    <div className='team-members_slide'
+                        style={{
+                            transform: `translateX(calc(-${activeIndex * 78}vw + 90vw))`,
+                            transition: isTransitioning ? 'transform 0.5s ease' : 'none',
+                        }}
+                    >
+                        <Member memberDetails={memberDetails} />
+                    </div>
+                ) : (
+                    <div className='team-members_slide'>
+                        <Member memberDetails={memberDetails} />
+                    </div>
+                )}
             </section>
             <ul className='team-point-section' style={{ display: `${isMobile ? 'flex' : 'none'}` }}>
                 {liPoints(memberDetails, activeIndex)}

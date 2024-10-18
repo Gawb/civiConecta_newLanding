@@ -22,6 +22,7 @@
     }
     .logo-footer-container img{
         width: 30vw;
+        height: 15vw;
         margin: 4vw 0;
     }
     .element-container{
@@ -47,8 +48,9 @@
     .social-container{
         order: 1;
     }
-    .social-container a img{
+    .social-container a>img{
         width: 12vw;
+        height: 12vw;
     }
     .copyrigth-container{
         width: 50vw;

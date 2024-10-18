@@ -23,6 +23,7 @@ footer{
 }
 .logo-footer-container img{
     width: 10vw;
+    height: 10vw;
 }
 .element-container {
     display: flex;
@@ -54,8 +55,9 @@ footer{
 .social-container{
     display: flex;
 }
-.social-container a img{
+.social-container a>img{
     width: 4.2vw;
+    height: 4.2vw;
     cursor: pointer;
 }
 .copyrigth-container {

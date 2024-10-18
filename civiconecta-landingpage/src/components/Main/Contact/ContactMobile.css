@@ -1,33 +1,42 @@
 @media (max-width: 499px) {
-    
+
     .contact-container{
         width: 65vw;
         border-radius: 4vw;
-        margin-bottom: 100vw;
+        margin-bottom: 96vw;
+        height: 112vw;
     }
-    .contact-container img{
+    .contact-container>img{
         width: 14vw;
+        height: 14vw;
+        margin: 2vw 0;
     }
 
     .contact-container h2{
         font-size: 6vw;
         width: 60vw;
+        margin: 2vw 0;
     }
     .contact-container p{
         font-size: 3.8vw;
         width: 66vw;
+        margin: 2vw 0;
     }
     .contact-info p img{
         width: 6vw;
-
+        height: 6vw;
+        margin: 0 2vw;
     }
 
     .form-section{
         width: 90vw;
-        top:74vw;
+        top:92vw;
         right: -6vw;
-        height: 100vw;
+        height: 116vw;
         border-radius: 4vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
     .form-section h3 {
         width: 80vw;
@@ -42,7 +51,7 @@
         border-radius: 2vw;
     }
     .form-section input::placeholder{
-        font-size: 4.4vw;
+        font-size: 4vw;
         font-weight: 400;
     }
     .form-section textarea{
@@ -52,7 +61,7 @@
         font-size: 4.2vw;
     }
     .form-section textarea::placeholder {
-        font-size: 4.2vw;
+        font-size: 4vw;
         font-weight: 400;
     }
     .form-section button{
@@ -61,6 +70,7 @@
         font-size: 4.8vw;
         margin-top: 2vw;
         border-radius: 4vw;
+        font-family: 'Nunito', sans-serif;
     }
     .error {
         font-size: 4vw;

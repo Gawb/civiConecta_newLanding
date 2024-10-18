@@ -27,6 +27,15 @@
 
 .article-about .about-title h2 img {
     width: 22vw;
+    height: 4vw;
+}
+.video-civi .video-placeholder{
+    width: 60vw;
+    height: 30vw;
+}
+.video-civi .video-placeholder img{
+    width: 60vw;
+    height: 30vw;
 }
 
 .video-civi iframe {

@@ -9,16 +9,16 @@ const homeInfo = {
 
 const Home = () => {
     return (
-        <article className='article-home' id='Inicio-section'>
+        <article className='article-home' id='Inicio-section' aria-labelledby="home-title">
             <section className='home-container'>
                 <div className='home-info'>
-                    <img src={heartEyes} alt='heart eyes icon'/>
-                    <h1>{homeInfo.tittle}</h1>
+                    <img src={heartEyes} alt='icono de ojos de corazón' aria-hidden="true" />
+                    <h1 id="home-title">{homeInfo.tittle}</h1>
                     <p>{homeInfo.message}</p>
                 </div>
-                <div className='home-image-container'>
+                <div className='home-image-container' aria-label="Imagen relacionada con el programa">
                     <div className='home-image'>
-                        {/* this section contains the image */}
+                        {/* this section contains the image of the home */}
                     </div>
                 </div>
             </section>

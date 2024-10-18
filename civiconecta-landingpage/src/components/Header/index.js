@@ -12,20 +12,18 @@ const Header = ({ elements, imgArrow }) => {
     const [url, setUrl] = useState('');
     const menuRef = useRef(null);
 
-
-
     const handleClick = (anchor) => (event) => {
         event.preventDefault();
         const id = `${anchor}-section`;
         const element = document.getElementById(id);
         if (element) {
-          element.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
+            element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
         }
         setUrl(`#${anchor}-section`)
-      };
+    };
 
     const handleResize = () => {
         setIsMobile(window.innerWidth <= widthScreen);
@@ -42,7 +40,6 @@ const Header = ({ elements, imgArrow }) => {
     const handleMouseLeave = () => {
         setIsSubMenuOpen(false);
     };
-
 
     useEffect(() => {
         const onMenu = menuRef.current;
@@ -66,20 +63,21 @@ const Header = ({ elements, imgArrow }) => {
 
     const liElements = (elements) =>
         elements.map((element, index) => (
-            <li key={index} id={`element-${index}`}>
+            <li key={index} id={`element-${index}`} role="menuitem"> {/* Atributo role para los elementos del menú */}
                 {index === 1 ? (
-                    <div ref={menuRef}>
-                        <div className={`${isSubMenuOpen ? '' : 'sub-element'}`}>
+                    <div ref={menuRef} aria-haspopup="true" aria-expanded={isSubMenuOpen} aria-controls={`submenu-${index}`}>
+                        <div className={`${isSubMenuOpen ? '' : 'sub-element'}`}
+                            style={{ color: `${isSubMenuOpen ? 'var(--white)' : ''}` }}
+                        >
                             {element} {imgArrow}
                         </div>
-                        <ul className={`submenu ${isSubMenuOpen ? 'open-submenu' : ''}`}>
-                            <li><a onClick={handleClick('about')} href={`#about-section`}>Nuestro Servicio</a></li>
-                            <li><a onClick={handleClick('advantajes')} href={`#advantajes-section`}>Ventajas</a></li>
+                        <ul id={`submenu-${index}`} className={`submenu ${isSubMenuOpen ? 'open-submenu' : ''}`} role="menu"> {/* Atributo role para el submenú */}
+                            <li><a onClick={handleClick('about')} href={`#about-section`} aria-label="Ir a Nuestro Servicio">Nuestro Servicio</a></li>
+                            <li><a onClick={handleClick('advantajes')} href={`#advantajes-section`} aria-label="Ir a Ventajas">Ventajas</a></li>
                         </ul>
                     </div>
                 ) : (
-                    <a onClick={handleClick(element)} href={`#${element}-section`}>{element}</a>
-
+                    <a onClick={handleClick(element)} href={`#${element}-section`} aria-label={`Ir a la sección de ${element}`}>{element}</a>
                 )}
             </li>
         ));

@@ -17,6 +17,8 @@ const quoteIcon =   <svg className='quote-icon' id="Capa_1" data-name="Capa 1" x
                     </svg>;
 
 const message = 'Desarrollar habilidades socioemocionales en tus estudiantes los ayudará a entender y manejar sus emociones; establecer y alcanzar metas positivas; sentir y mostrar empatía por los demás; construir y mantener relaciones saludables; y tomar decisiones responsables, es decir, los prepara para la vida';
+
 const videoCivi = 'https://www.youtube.com/embed/zDZRmXnZMjc';
 
-export { infoBoxElements, heartBrainIcon, message, videoCivi, quoteIcon};
+
+export { infoBoxElements, heartBrainIcon, message, videoCivi, quoteIcon };

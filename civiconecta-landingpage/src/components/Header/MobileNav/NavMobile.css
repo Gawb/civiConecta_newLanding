@@ -37,6 +37,7 @@ nav .logo-container{
 
 nav .logo-container img{
     width: 30vw;
+    height: 16vw;
 }
 nav.change  .logo-container img{
     width: 28vw;

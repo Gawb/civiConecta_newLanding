@@ -9,22 +9,24 @@ const CarruselBox = ({ carruselElements, imgArrow, activeIndex }) => {
                 key={index}
                 className={`carruselBox ${index === activeIndex ? 'active' : index === activeIndex - 1 || index === activeIndex + 1 ? 'adjacent' : ''}`}
                 style={{
-                    // transform: index === activeIndex ? 'scale(1)' : 'scale(0.8)',
                     border: `0.2vw solid var(${carruselElements.color[index]})`,
                 }}
+                aria-hidden={index !== activeIndex} // Solo el índice activo es accesible
             >
                 <div className='box-img'
                     style={{
                         backgroundImage: `url(${img})`,
                         backgroundSize: `cover`
                     }}
+                    role="img"
+                    aria-label={carruselElements.tittle[index]} // Añadir un aria-label para el título
                 >
                     <div style={{
                         backgroundColor: `var(${index === activeIndex ? 'transparent' : carruselElements.colorCurtain[index]})`,
                         opacity: `${index === activeIndex ? 0 : 1}`,
                         width: `100%`,
-                        height:`100%`,
-                        transition:`0.3s`
+                        height: `100%`,
+                        transition: `0.3s`
                     }}></div>
                 </div>
                 <div className='box-content'>

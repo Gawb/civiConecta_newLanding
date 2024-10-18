@@ -7,7 +7,16 @@
         font-size: 6vw;
     }
     .article-about .about-title h2 img{
-        width: 54vw;
+        width: 46vw;
+        height: 8vw;
+    }
+    .video-civi .video-placeholder{
+        width: 88vw;
+        height: 50vw;
+    }
+    .video-civi .video-placeholder img{
+        width: 88vw;
+        height: 50vw;
     }
     .video-civi iframe{
         width: 88vw;

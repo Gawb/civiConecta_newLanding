@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from 'react';
 
 const title = '¿Qué opinan los usuarios de Civi?';
 
-const Testimonials = ({imgArrow}) => {
+const Testimonials = ({ imgArrow }) => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 500);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [startTouchX, setStartTouchX] = useState(null);
@@ -18,13 +18,13 @@ const Testimonials = ({imgArrow}) => {
     const prevSlide = () => {
         if (isTransitioning) return;
         setIsTransitioning(true);
-        setActiveIndex((prevIndex) => prevIndex === 1 ? totalSlides : prevIndex - 1);
+        setActiveIndex((prevIndex) => (prevIndex === 1 ? totalSlides : prevIndex - 1));
     };
 
     const nextSlide = () => {
         if (isTransitioning) return;
         setIsTransitioning(true);
-        setActiveIndex((prevIndex) => prevIndex === totalSlides ? 1 : prevIndex + 1);
+        setActiveIndex((prevIndex) => (prevIndex === totalSlides ? 1 : prevIndex + 1));
     };
 
     const handleTouchStart = (e) => {
@@ -73,47 +73,64 @@ const Testimonials = ({imgArrow}) => {
                 key={index}
                 id={`review-${logo}`}
                 className={`point ${index === (activeIndex - 1) ? 'point-selected' : ''}`}
+                aria-label={`Revisión ${index + 1}`}
+                role="button"
+                tabIndex={0}
+                onClick={() => setActiveIndex(index + 1)}
+                onKeyPress={(e) => e.key === 'Enter' && setActiveIndex(index + 1)}
             ></li>
         ));
 
-
-return (
-    <article className='testimonials' id='Testimonios-section'>
-        <h2>{title}</h2>
-        <div className='testimonials_carrusel'>
-            <div className='testimonial_carruse_arrow left'>
-            {imgArrow}
-            </div>
-            <div className='testimonials_carrusel-container'
-                onTouchStart={handleTouchStart}
-                onTouchMove={handleTouchMove}
-                onTouchEnd={handleTouchEnd}
-            >
-            {isMobile?
-                <div className='testimonials-boxes'
-                style={{
-                    transform: `translateX(calc(-${activeIndex * 78}vw + 85vw))`,
-                    transition: isTransitioning ? 'transform 0.5s ease' : 'none',
-                }}
+    return (
+        <article className='testimonials' id='Testimonios-section' aria-labelledby="testimonials-title">
+            <h2 id="testimonials-title">{title}</h2>
+            <div className='testimonials_carrusel' aria-live="polite">
+                <div
+                    className='testimonial_carruse_arrow left'
+                    aria-label='Navegar a la revisión anterior'
+                    role="button"
+                    tabIndex={0}
+                    onClick={prevSlide}
+                    onKeyPress={(e) => e.key === 'Enter' && prevSlide()}
                 >
-                    <School schoolData={schoolData}/>
+                    {imgArrow}
                 </div>
-            :
-                <div className='testimonials-boxes'>
-                    <School schoolData={schoolData}/>
+                <div className='testimonials_carrusel-container'
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                >
+                    {isMobile ? (
+                        <div className='testimonials-boxes'
+                            style={{
+                                transform: `translateX(calc(-${activeIndex * 78}vw + 85vw))`,
+                                transition: isTransitioning ? 'transform 0.5s ease' : 'none',
+                            }}
+                        >
+                            <School schoolData={schoolData} />
+                        </div>
+                    ) : (
+                        <div className='testimonials-boxes'>
+                            <School schoolData={schoolData} />
+                        </div>
+                    )}
                 </div>
-            }
+                <div
+                    className='testimonial_carruse_arrow rigth'
+                    aria-label='Navegar a la siguiente revisión'
+                    role="button"
+                    tabIndex={0}
+                    onClick={nextSlide}
+                    onKeyPress={(e) => e.key === 'Enter' && nextSlide()}
+                >
+                    {imgArrow}
+                </div>
             </div>
-            <div className='testimonial_carruse_arrow rigth'>
-            {imgArrow}
-            </div>
-        </div>
-        <ul className='team-point-section' style={{ display: `${isMobile ? 'flex' : 'none'}` }}>
-            {liPoints(schoolData, activeIndex)}
-        </ul>
-    </article>
-)
-
-}
+            <ul className='team-point-section' style={{ display: `${isMobile ? 'flex' : 'none'}` }}>
+                {liPoints(schoolData, activeIndex)}
+            </ul>
+        </article>
+    );
+};
 
 export { Testimonials };
