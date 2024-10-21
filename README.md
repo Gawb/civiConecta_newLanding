@@ -1,2 +1,2 @@
 # civiConecta_newLanding
-Landinpage for the Civiconecta team. 
+Landinpage for the Civiconecta team. www.civiconecta.cl
